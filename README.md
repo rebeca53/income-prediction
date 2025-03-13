@@ -2,13 +2,13 @@
 
 This project was developed as part of the Erasmus MSc in Geospatial Technologies.
 
-To investigate the factors that might influence the monthly income in Brazil, I trained different machine learnings.
+To investigate the factors that might influence the monthly income in Brazil, I trained different machine learning models.
 
 Ensemble learners achieve higher accuracy. However, simple learners like LASSO have better interpretability in understanding and ranking the variables that influence income. You can check the results in this [presentation](https://github.com/rebeca53/income-prediction/blob/main/Income%20Prediction%20on%20Brazil%20data.pdf).
 
 ## Data
 
-All the data is freely provided by the IBGE, the Brazilian Institute of Geography and Statistics.
+All the data is freely provided by IBGE, the Brazilian Institute of Geography and Statistics.
 
 Documents retrieved from
 https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Anual/Microdados/Visita/
@@ -33,7 +33,7 @@ More specifically:
 - PNADC_2021_visita5.txt
 - PNADC_2022_visita5.txt
 
-The script process the data by encoding the values, and then generates the .csv files with processed data. For instance, each state value represents a column in the resulting data, which can be 0 or 1.
+The script processes the data by encoding the values and then generating the .csv files with processed data. For instance, each state value represents a column in the resulting data, which can be 0 or 1.
 To run the code, make sure you have the aforementioned files in the same path as the script.
 
 ### datapreparation_few_uncoded_features.py
@@ -47,7 +47,7 @@ More specifically:
 - PNADC_2021_visita5.txt
 - PNADC_2022_visita5.txt
 
-The script process the data, and then generates the .csv files with processed data. It doesn't encodes values. For instance, the state is a column with a string value.
+The script processes the data and then generates the .csv files with the processed data. It doesn't encode values. For instance, the state is a column with a string value.
 To run the code, make sure you have the aforementioned files in the same path as the script.
 The resulting files are in the folder few_features.
 
@@ -62,16 +62,16 @@ More specifically:
 - PNADC_2021_visita5.txt
 - PNADC_2022_visita5.txt
 
-The script process the data, and then generates the .csv files with processed data. It doesn't encodes values. For instance, the state is a column with a string value.
-It differs from **_datapreparation_few_uncoded_features.py_** because it process more features (columns) from the original data.
+The script processes the data and then generates the .csv files with the processed data. It doesn't encode values. For instance, the state is a column with a string value.
+It differs from **_datapreparation_few_uncoded_features.py_** because it processes more features (columns) from the original data.
 To run the code, make sure you have the aforementioned files in the same path as the script.
 The resulting files are in the folder many_features_text_category_values. They are used by the prediction model.
 
 ## Prediction model
 
-The models were trained using [Orange](https://orangedatamining.com/). To train the model, open the file ***final_text_category_values.ows*** and reload the input files. The training takes around 15 minutes in a machine with 32GB RAM memory.
+The models were trained using [Orange](https://orangedatamining.com/). To train the model, open the file ***final_text_category_values.ows*** and reload the input files. The training takes around 15 minutes in a machine with 32GB RAM.
 
-The results are summarized as follow:
+The results are summarized as follows:
 
 | Model | MSE | MAE | R2 Coefficient of determination |
 |-------|-----|-----|---------------------------------|
@@ -79,10 +79,10 @@ The results are summarized as follow:
 | Lasso Linear Regression | 0.509 | 0.526 | 0.45 |
 | kNN | 0.447 | 0.486 | 0.516 |
 | Random Forest | 0.396 | 0.455 | 0.571 |
-| <mark>**Gradient Boosting**</mark> | 0.381 | 0.449 | 0.588 |
+| <mark>**Gradient Boosting**</mark> | <mark>**0.381**</mark> | <mark>**0.449**</mark> | <mark>**0.588**</mark> |
 | AdaBoost | 0.421 | 0.474 | 0.545 |
 
-Regarding the Lasso coeficients, the following table sorts the attributes according to the relationship with the response:
+Regarding the Lasso coefficients, the following table sorts the attributes according to the relationship with the response:
 | Name | Coefficient| Category |
 | -----|------------|----------|
 |SCIENCE_INTELECTUAL | 0.364143| Occupation group |
