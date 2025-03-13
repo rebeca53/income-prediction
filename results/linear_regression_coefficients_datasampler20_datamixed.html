@@ -1,0 +1,702 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Orange Report</title>
+
+    <style>
+    html, body, table {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        margin:0px;
+        padding:0;
+        border:0 none;
+    }
+
+    h1, h2 , h3, h4, h5 {
+       padding: 1px;
+       font-size:100%;
+    }
+
+    h1 {
+        color: white;
+        background-color: black;
+        padding: 4px;
+        margin-top: 12px;
+        margin-bottom: 6px;
+    }
+
+    h2 {
+        border-bottom: 1px solid black;
+        padding-left: 2px;
+    }
+
+    ul, table, p {
+        padding: 10px;
+    }
+
+    table {
+        margin-left: -6px;
+    }
+
+    span.timestamp {
+        position: absolute;
+        right: 40px;
+        color:#ddd;
+    }
+
+    div.selected, div.normal {
+        margin: 5px;
+    }
+
+    div.selected {
+        background: #ddd;
+    }
+    @media print{
+        div.selected {
+            background: inherit;
+        }
+        ::-webkit-input-placeholder {
+            color: transparent;
+        }
+    }
+
+    div.content {
+        margin-left: 15px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 2px 6px 2px 6px;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    @media screen {
+        td, th {
+            white-space: nowrap;
+        }
+    }
+
+    .caption {
+        text-align: center;
+        font-size: 90%;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+        max-height: 20cm;
+    }
+
+    span.legend-square {
+        width: 1em;
+        height: 1em;
+        margin-right: 6px;
+        display: inline-block;
+    }
+
+    span.legend-item {
+        margin-right: 24px;
+    }
+
+    textarea {
+        border: 1px solid silver;
+        font-style: italic;
+        width: 100%;
+        height: 4em;
+    }
+
+    .textwrapper {
+        padding: 15px;
+    }
+
+    div.normal textarea:invalid {
+        display: none;
+    }
+
+    div.selected textarea {
+        display: block;
+    }
+
+    @media print{
+        section.section, img {
+            page-break-inside: avoid;
+        }
+    }
+    </style>
+    <script>
+    function scrollToId(id) {
+        var sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.scrollIntoView();
+            return true;
+        }
+        return false;
+    };
+
+    function setSelectedId(id) {
+        var sel_el = document.getElementsByClassName('selected')[0];
+        if (sel_el != undefined && sel_el.id != id) {
+           sel_el.className = 'normal';
+        }
+        sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.className = 'selected';
+            return true;
+        }
+        return false;
+    };
+    </script>
+
+</head><body onload="(function (id) {     setSelectedId(id); scrollToId(id); }(&quot;2162420672544&quot;));">
+
+ 
+
+<div id="2162364825664" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Data Table <span class="timestamp">Fri Jan 05 24, 00:26:07</span></h1><div class="content">
+<ul><b>Data instances:</b> 89<br><b>Features:</b> 1<br><b>Meta attributes:</b> 1<br></ul><table>
+<tbody><tr><th></th><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">name</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">coef</th>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">87</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=SCIENCE_INTELECTUAL</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.373151</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">76</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=PUBLIC_ADMIN</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.292366</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">80</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=DIRECTOR_MANAGER</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.278132</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">11</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RACE_COLOR=RDUMMY_WHITE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.159893</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">35</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_SC</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0979639</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">54</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=HEAD</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0838908</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">65</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">YEARS_OF_STUDY</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0836452</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">57</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=PARTNER_OTHER_SEX</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0679547</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">37</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_SP</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0623213</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">41</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">AREA_TYPE=CAPITAL</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0494224</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">89</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=TECHNICIAN</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0431027</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">2</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">YEAR</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0418245</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">70</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=EDUCATION_HEALTH_SOCIAL</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0413057</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">66</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">WORKED_HOURS</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.018454</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">73</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=INFO_COMM_FINANCE_MANAGE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0163813</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">3</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">AGE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0121209</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">29</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_PR</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.00614597</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">5</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">SEX=M</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">8.67369e-16</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">40</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">HOME_SITUATION=URBAN</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">3.78701e-16</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">6</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RACE_COLOR=RDUMMY_ASIAN</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">7</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RACE_COLOR=RDUMMY_BLACK</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">8</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RACE_COLOR=RDUMMY_MIXED</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">9</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RACE_COLOR=RDUMMY_NATIVE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">10</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RACE_COLOR=RDUMMY_OTHER</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">12</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_AC</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">13</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_AL</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">14</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_AM</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">15</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_AP</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">18</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_DF</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">19</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_ES</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">20</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_GO</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">22</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_MG</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">23</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_MS</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">24</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_MT</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">25</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_PA</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">26</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_PB</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">27</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_PE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">28</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_PI</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">30</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_RJ</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">31</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_RN</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">32</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_RO</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">33</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_RR</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">34</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_RS</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">36</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_SE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">38</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_TO</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">42</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">AREA_TYPE=INTEGRATED</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">43</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">AREA_TYPE=METROPOLITAN</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">46</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=CHILD_BOTH</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">47</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=CHILD_HEAD</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">48</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=DOMESTIC_EMPLOYEE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">49</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=DOMESTRIC_EMPLOYEE_RELATIVE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">50</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=FREE_NON_RELATIVE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">51</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=GRANDCHILD</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">52</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=GRANDPARENT</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">53</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=GREATGRANDCHILD</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">55</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=PARENT</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">56</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=PARENT_IN_LAW</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">58</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=PARTNER_SAME_SEX</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">59</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=PAYING_NON_RELATIVE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">60</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=PENSIONER</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">61</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=RELATIVE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">62</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=SIBLING</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">63</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=SON_DAUGTHER_IN_LAW</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">64</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=STEPCHILD</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">68</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=CONSTRUCTION</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">69</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=DOMESTIC_LABOR</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">71</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=HOUSING_FOOD</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">72</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=INDUSTRY</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">74</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=OTHER</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">75</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=POORLY_DEFINED</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">77</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=TRANSPORTATION_WAREHOUSE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">78</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=VEIHICLES_SELL_MAINTENANCE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">79</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=ARMY</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">82</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=MACHINERY_OPERATOR</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">83</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=MANAGEMENT_SUPPORT</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">84</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=POORLY_DEFINED</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">86</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=QUALIFIED_CONSTRUCTION_MECH</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">45</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">NUM_PEOPLE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0.00876357</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">67</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=AGRI_FISH_FORESTRY</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0.0102792</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">16</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_BA</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0.024638</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">44</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">AREA_TYPE=NON_METRO_INTEG</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0.0385422</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">85</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=QUALIFIED_AGRI_FISH_FORESTRY</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0.0508575</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">17</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_CE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0.100268</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">21</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_MA</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0.115121</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">88</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=SERVICE_SALESPEOPLE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0.119411</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">39</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">HOME_SITUATION=RURAL</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0.129255</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">81</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=ELEMENTARY</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0.131374</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">4</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">SEX=F</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0.237277</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">1</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">intercept</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-79.3076</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);"></textarea></div></div><div id="2162420672544" class="selected" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Data Table <span class="timestamp">Fri Jan 05 24, 00:27:38</span></h1><div class="content">
+<ul><b>Data instances:</b> 89<br><b>Features:</b> 1<br><b>Meta attributes:</b> 1<br></ul><table>
+<tbody><tr><th></th><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">name</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">coef</th>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">1</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">intercept</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">9.23854e+10</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">80</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=DIRECTOR_MANAGER</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">3.20666e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">87</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=SCIENCE_INTELECTUAL</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">3.20666e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">79</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=ARMY</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">3.20666e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">89</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=TECHNICIAN</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">3.20666e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">83</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=MANAGEMENT_SUPPORT</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">3.20666e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">82</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=MACHINERY_OPERATOR</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">3.20666e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">84</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=POORLY_DEFINED</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">3.20666e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">88</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=SERVICE_SALESPEOPLE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">3.20666e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">86</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=QUALIFIED_CONSTRUCTION_MECH</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">3.20666e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">81</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=ELEMENTARY</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">3.20666e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">85</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">OCUPATION_GROUP=QUALIFIED_AGRI_FISH_FORESTRY</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">3.20666e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">65</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">YEARS_OF_STUDY</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0590668</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">2</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">YEAR</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0530213</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">66</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">WORKED_HOURS</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0165634</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">3</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">AGE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0076065</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">45</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">NUM_PEOPLE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.00523376</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">48</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=DOMESTIC_EMPLOYEE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.35033e+07</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">60</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=PENSIONER</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.35033e+07</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">56</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=PARENT_IN_LAW</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.35033e+07</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">58</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=PARTNER_SAME_SEX</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.35033e+07</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">54</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=HEAD</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.35033e+07</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">57</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=PARTNER_OTHER_SEX</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.35033e+07</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">55</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=PARENT</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.35033e+07</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">52</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=GRANDPARENT</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.35033e+07</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">63</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=SON_DAUGTHER_IN_LAW</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.35033e+07</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">59</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=PAYING_NON_RELATIVE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.35033e+07</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">50</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=FREE_NON_RELATIVE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.35033e+07</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">61</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=RELATIVE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.35033e+07</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">62</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=SIBLING</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.35033e+07</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">47</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=CHILD_HEAD</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.35033e+07</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">46</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=CHILD_BOTH</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.35033e+07</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">64</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=STEPCHILD</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.35033e+07</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">51</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=GRANDCHILD</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.35033e+07</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">53</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=GREATGRANDCHILD</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.35033e+07</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">49</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RELATION_HEAD=DOMESTRIC_EMPLOYEE_RELATIVE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.35033e+07</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">41</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">AREA_TYPE=CAPITAL</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-1.27598e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">42</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">AREA_TYPE=INTEGRATED</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-1.27598e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">43</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">AREA_TYPE=METROPOLITAN</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-1.27598e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">44</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">AREA_TYPE=NON_METRO_INTEG</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-1.27598e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">76</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=PUBLIC_ADMIN</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-1.45876e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">70</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=EDUCATION_HEALTH_SOCIAL</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-1.45876e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">73</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=INFO_COMM_FINANCE_MANAGE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-1.45876e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">72</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=INDUSTRY</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-1.45876e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">77</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=TRANSPORTATION_WAREHOUSE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-1.45876e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">68</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=CONSTRUCTION</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-1.45876e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">78</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=VEIHICLES_SELL_MAINTENANCE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-1.45876e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">67</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=AGRI_FISH_FORESTRY</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-1.45876e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">69</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=DOMESTIC_LABOR</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-1.45876e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">71</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=HOUSING_FOOD</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-1.45876e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">74</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=OTHER</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-1.45876e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">75</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ACTIVITY_GROUP=POORLY_DEFINED</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-1.45876e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">35</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_SC</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">24</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_MT</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">18</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_DF</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">29</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_PR</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">34</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_RS</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">37</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_SP</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">23</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_MS</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">20</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_GO</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">32</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_RO</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">19</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_ES</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">30</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_RJ</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">22</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_MG</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">38</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_TO</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">15</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_AP</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">12</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_AC</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">33</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_RR</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">25</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_PA</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">13</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_AL</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">36</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_SE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">31</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_RN</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">27</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_PE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">14</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_AM</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">26</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_PB</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">16</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_BA</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">28</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_PI</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">17</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_CE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">21</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">STATE=SDUMMY_MA</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.67702e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">40</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">HOME_SITUATION=URBAN</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-4.09356e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">39</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">HOME_SITUATION=RURAL</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-4.09356e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">6</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RACE_COLOR=RDUMMY_ASIAN</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-7.029e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">11</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RACE_COLOR=RDUMMY_WHITE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-7.029e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">8</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RACE_COLOR=RDUMMY_MIXED</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-7.029e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">9</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RACE_COLOR=RDUMMY_NATIVE</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-7.029e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">7</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RACE_COLOR=RDUMMY_BLACK</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-7.029e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">10</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">RACE_COLOR=RDUMMY_OTHER</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-7.029e+08</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">5</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">SEX=M</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-9.10291e+10</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">4</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">SEX=F</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-9.10291e+10</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);"></textarea></div></div></body></html>
