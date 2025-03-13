@@ -65,14 +65,11 @@ More specifically:
 The script process the data, and then generates the .csv files with processed data. It doesn't encodes values. For instance, the state is a column with a string value.
 It differs from **_datapreparation_few_uncoded_features.py_** because it process more features (columns) from the original data.
 To run the code, make sure you have the aforementioned files in the same path as the script.
-The resulting files are in the folder many_features_text_category_values.
+The resulting files are in the folder many_features_text_category_values. They are used by the prediction model.
 
 ## Prediction model
 
-The models were trained using [Orange](https://orangedatamining.com/). The resulting files are:
-
-- final_text_category_values.ows
-- final.ows
+The models were trained using [Orange](https://orangedatamining.com/). To train the model, open the file ***final_text_category_values.ows*** and reload the input files. The training takes around 15 minutes in a machine with 32GB RAM memory.
 
 The results are summarized as follow:
 
@@ -82,7 +79,7 @@ The results are summarized as follow:
 | Lasso Linear Regression | 0.509 | 0.526 | 0.45 |
 | kNN | 0.447 | 0.486 | 0.516 |
 | Random Forest | 0.396 | 0.455 | 0.571 |
-| _Gradient Boosting_ | 0.381 | 0.449 | 0.588 |
+| <mark>**Gradient Boosting**</mark> | 0.381 | 0.449 | 0.588 |
 | AdaBoost | 0.421 | 0.474 | 0.545 |
 
 Regarding the Lasso coeficients, the following table sorts the attributes according to the relationship with the response:
